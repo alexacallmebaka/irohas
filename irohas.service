@@ -1,0 +1,15 @@
+[Unit]
+Description=irohas Discord Bot
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=lloyd
+WorkingDirectory=/opt/bots/discord/irohas
+ExecStart=/opt/bots/discord/irohas/bin/python /opt/bots/discord/irohas/main.py
+
+[Install]
+WantedBy=multi-user.target
