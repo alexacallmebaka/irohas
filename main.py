@@ -16,9 +16,10 @@ def main() -> None:
 
     #Create bot.
     bot = commands.Bot()
-   
-    #Add commands.
-    with open('creds/roles.json') as rolefile:
+  
+    #Read in role-to-roleID dict from JSON.
+    with open('config/roles.json') as rolefile:
+        #Add commands.
         bot.add_cog(Admin(bot, log, json.load(rolefile)))
    
     #Read the bot token in from external JSON.
